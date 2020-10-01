@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://js.stripe.com/v3/"></script>
+  <title>Agendar Cita</title>
+</head>
+
+<body>
+  <div class="container text-center">
+    <img src="img/logo.jpg" loading="lazy" width="700" height="700" class="img-fluid">
+  </div>
+
+  <section id="home-icons" class="py-5">
+
+    <div class="row row-content">
+      <div class="col-12">
+        <div class="card brand-text text-center card-form">
+          <div class="card-body text-white">
+            <h3>¡Agenda una cita!</h3>
+            <p class="lead">Por favor completa este formulario para agendar una cita</p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control form-control-lg" required placeholder="Nombre" id="name"
+                  name="name">
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-phone"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control form-control-lg" required placeholder="Teléfono" id="phone"
+                  name="phone">
+              </div>
+
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                <input type="email" class="form-control form-control-lg" placeholder="Correo electrónico" id="email"
+                  name="email">
+              </div>
+
+              <br>
+
+              <div class="text-center lead">
+                <div class="row">
+                  <div class="col-3">
+                    <h3>Peso</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>++Corte de pelo</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>**Baño</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>^^Deslanado</h3>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-3">
+                    <select class="form-control form-control-lg" name="weight" id="weight">
+                      <option value="">-- Selecciona el peso --</option>
+                      <option value="10 libras o menos">10 libras o menos</option>
+                      <option value="11 a 20 libras">11 a 20 libras</option>
+                      <option value="21 a 30 libras"> 21 a 30 libras</option>
+                      <option value="31 a 40 libras">31 a 40 libras</option>
+                      <option value="41 a 50 libras">41 a 50 libras</option>
+                      <option value="51 a 60 libras">51 a 60 libras</option>
+                      <option value="61 a 70 libras">61 a 70 libras</option>
+                      <option value="71 a 80 libras">71 a 80 libras</option>
+                      <option value="81 a 90 libras">81 a 90 libras</option>
+                      <option value="91 a 100 libras">91 a 100 libras</option>
+                      <option value="101 a 110 libras">101 a 110 libras</option>
+                      <option value="111 a 120 libras">111 a 120 libras</option>
+                      <option value="121 a 130 libras">121 a 130 libras</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" required disabled id="hairCut" name="weightService"
+                        class="custom-control-input">
+                      <label class="custom-control-label" for="hairCut" class="text-white">$45 + tax</label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" required disabled id="bath" name="weightService" class="custom-control-input">
+                      <label class="custom-control-label" for="bath" class="text-white">$20 + tax</label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" required disabled id="deShed" name="weightService"
+                        class="custom-control-input">
+                      <label class="custom-control-label" for="deShed" class="text-white">$35 + tax</label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="small">
+                  <div class="row">
+                    ++ Corte de pelo (Corte, baño, corte de uñas, limpieza de orejas, drenado de sacos anales, perfume,
+                    bandana o moños).
+                  </div>
+                  <div class="row">
+                    ** Baño (Baño, corte de uñas, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                    bandana o monos).
+                  </div>
+                  <div class="row">
+                    ^^ Deslanado (Baño, deslanado, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                    bandana o monos).
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="text-center lead">
+                  <div class="row">
+                    <div class="col-3">
+                      <h3>Peso</h3>
+                    </div>
+                    <div class="col-3">
+                      <h3>Corte de uñas</h3>
+                    </div>
+                    <div class="col-3">
+                      <h3>Limado de uñas</h3>
+                    </div>
+                    <div class="col-3">
+                      <h3>Combo</h3>
+                    </div>
+                  </div>
+                  <div class="row text-center">
+                    <div class="col-3">
+                      <select class="form-control form-control-lg" name="weight2" id="weight2">
+                        <option value="">-- Selecciona el peso --</option>
+                        <option value="20 libras o menos">20 libras o menos</option>
+                        <option value="21 a 40 librass">21 a 40 libras</option>
+                        <option value="41 libras más">41 libras más</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" required disabled id="nailTrim" name="weight2Service"
+                          class="custom-control-input">
+                        <label class="custom-control-label" for="nailTrim" class="text-white">$8 + tax</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" required disabled id="nailGrind" name="weight2Service"
+                          class="custom-control-input">
+                        <label class="custom-control-label" for="nailGrind" class="text-white">$8 + tax</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" required disabled id="combo" name="weight2Service"
+                          class="custom-control-input">
+                        <label class="custom-control-label" for="combo" class="text-white">$14 + tax</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                  <div class="col-3">
+                    <h3>Cepillado de dientes</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Facial</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Pintar uñas</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Rasurar 1 zona</h3>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-md-3">
+                    $8 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="dental" id="dental">
+                      <label class="custom-control-label" for="dental"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $6 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="facial" id="facial">
+                      <label class="custom-control-label" for="facial"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $10 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="paintNails" id="paintNails">
+                      <label class="custom-control-label" for="paintNails"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $5 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="trimArea" id="trimArea">
+                      <label class="custom-control-label" for="trimArea"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                  <div class="col-3">
+                    <h3>Recorte de cabeza</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Rasurado de pata</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Express (Servicio en 1 hr) saltar la línea</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Infestación de garrapatas</h3>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-md-3">
+                    $10 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="fullHeadTrim" id="fullHeadTrim">
+                      <label class="custom-control-label" for="fullHeadTrim"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $20 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="poodleFeet" id="poodleFeet">
+                      <label class="custom-control-label" for="poodleFeet"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $35 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="express" id="express">
+                      <label class="custom-control-label" for="express"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $1 x minute
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="ticksInfestation" id="ticksInfestation">
+                      <label class="custom-control-label" for="ticksInfestation"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                  <div class="col-3">
+                    <h3>Limpieza de orejas</h3>
+                  </div>
+                  <div class="col-3">
+                    <h3>Corte sanitario</h3>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-md-3">
+                    $7 + tax
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="earsCleaned" id="earsCleaned">
+                      <label class="custom-control-label" for="earsCleaned"></label>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    $10 less than haircut
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="switch" name="sanitary" id="sanitary">
+                      <label class="custom-control-label" for="sanitary"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <button id="checkoutButton" class="btn btn-light btn-block"><strong>AGENDAR</strong></button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="text-center p-4">
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="js/translate.js"></script>
+  <script src="js/appointment.js"></script>
+
+</body>
+
+</html>
