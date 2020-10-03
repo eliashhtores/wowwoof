@@ -1,136 +1,231 @@
 loadEventListeners();
+const services =
+    [
+        {
+            "description": "10 libras o menos",
+            "hairCut": "$45 + tax",
+            "bath": "$20 + tax",
+            "deShed": "$35 + tax"
+        },
+        {
+            "description": "11 a 20 libras",
+            "hairCut": "$55 + tax",
+            "bath": "$25 + tax",
+            "deShed": "$45 + tax"
+        },
+        {
+            "description": "21 a 30 libras",
+            "hairCut": "$65 + tax",
+            "bath": "$30 + tax",
+            "deShed": "$55 + tax"
+        },
+        {
+            "description": "31 a 40 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$35 + tax",
+            "deShed": "$65 + tax"
+        },
+        {
+            "description": "41 a 50 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$40 + tax",
+            "deShed": "$75 + tax"
+        },
+        {
+            "description": "51 a 60 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$45 + tax",
+            "deShed": "$85 + tax"
+        },
+        {
+            "description": "61 a 70 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$50 + tax",
+            "deShed": "$95 + tax"
+        },
+        {
+            "description": "71 a 80 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$55 + tax",
+            "deShed": "$105 + tax"
+        },
+        {
+            "description": "81 a 90 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$60 + tax",
+            "deShed": "$115 + tax"
+        },
+        {
+            "description": "91 a 100 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$65 + tax",
+            "deShed": "$125 + tax"
+        },
+        {
+            "description": "101 a 110 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$70 + tax",
+            "deShed": "$135 + tax"
+        },
+        {
+            "description": "111 a 120 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$75 + tax",
+            "deShed": "$145 + tax"
+        },
+        {
+            "description": "121 a 130 libras",
+            "hairCut": "$40 + peso + tax",
+            "bath": "$80 + tax",
+            "deShed": "$155 + tax"
+        }
+    ];
+
+const services2 =
+    [
+        {
+            "description": "20 libras o menos",
+            "nailTrimCut": "$8 + tax",
+            "nailGrind": "$8 + tax",
+            "combo": "$14 + tax"
+        },
+        {
+            "description": "21 a 40 libras",
+            "nailTrimCut": "$10 + tax",
+            "nailGrind": "$10 + tax",
+            "combo": "$18 + tax"
+        },
+        {
+            "description": "41 libras más",
+            "nailTrimCut": "$13 + tax",
+            "nailGrind": "$13 + tax",
+            "combo": "$23 + tax"
+        }
+    ];
 
 function loadEventListeners() {
-    const checkoutButton = document.querySelector('#checkoutButton');
-    checkoutButton.disabled = false;
-    let formData = [];
+    document.addEventListener('DOMContentLoaded', function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_flat',
+            radioClass: 'iradio_flat'
+        });
+    });
 
-    document.querySelector('#weight').addEventListener('change', () => {
-        const weight = document.querySelector('#weight').value;
-        const hairCut = document.querySelector('#hairCut');
-        const bath = document.querySelector('#bath');
-        const deShed = document.querySelector('#deShed');
-
-        if (weight !== '') {
-            hairCut.removeAttribute("disabled");
-            bath.removeAttribute("disabled");
-            deShed.removeAttribute("disabled");
+    document.querySelector('#weight').addEventListener('change', (e) => {
+        hairCutCost = document.querySelector('#hairCutCost');
+        bathCost = document.querySelector('#bathCost');
+        deShedCost = document.querySelector('#deShedCost');
+        if (e.target.value !== '') {
+            hairCutCost.innerHTML = services[e.target.value].hairCut;
+            bathCost.innerHTML = services[e.target.value].bath;
+            deShedCost.innerHTML = services[e.target.value].deShed;
+            $('.flat').prop('disabled', false);
+            $('.flat').prop('checked', false).iCheck('update');
         } else {
-            hairCut.setAttribute("disabled", '');
-            bath.setAttribute("disabled", '');
-            deShed.setAttribute("disabled", '');
+            hairCutCost.innerHTML = '';
+            bathCost.innerHTML = '';
+            deShedCost.innerHTML = ''
+            $('.flat').prop('disabled', true);
+            $('.flat').prop('checked', false).iCheck('update');
         }
     });
 
-    document.querySelector('#weight2').addEventListener('change', () => {
-        const weight2 = document.querySelector('#weight2').value;
-        const nailTrim = document.querySelector('#nailTrim');
-        const nailGrind = document.querySelector('#nailGrind');
-        const combo = document.querySelector('#combo');
-
-        if (weight2 !== '') {
-            nailTrim.removeAttribute("disabled");
-            nailGrind.removeAttribute("disabled");
-            combo.removeAttribute("disabled");
+    document.querySelector('#weight2').addEventListener('change', (e) => {
+        nailTrimCutCost = document.querySelector('#nailTrimCutCost');
+        nailGrindCost = document.querySelector('#nailGrindCost');
+        comboCost = document.querySelector('#comboCost');
+        if (e.target.value !== '') {
+            nailTrimCutCost.innerHTML = services2[e.target.value].nailTrimCut;
+            nailGrindCost.innerHTML = services2[e.target.value].nailGrind;
+            comboCost.innerHTML = services2[e.target.value].combo;
+            $('.flat2').prop('disabled', false);
+            $('.flat2').prop('checked', false).iCheck('update');
         } else {
-            nailTrim.setAttribute("disabled", '');
-            nailGrind.setAttribute("disabled", '');
-            combo.setAttribute("disabled", '');
-        }
-    });
-
-    document.querySelector('#dental').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Cepillado de dientes",
-                "cost": '8 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#facial').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Facial",
-                "cost": '8 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#paintNails').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Pintar uñas",
-                "cost": '10 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#trimArea').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Rasurar 1 zona",
-                "cost": '5 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#fullHeadTrim').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Recorte de cabeza",
-                "cost": '10 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#poodleFeet').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Rasurado de pata",
-                "cost": '20 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#express').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Express",
-                "cost": '35 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#ticksInfestation').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Infestación de garrapatas",
-                "cost": '1 x minute'
-            });
-        }
-    });
-
-    document.querySelector('#earsCleaned').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Limpieza de orejas",
-                "cost": '35 + tax'
-            });
-        }
-    });
-
-    document.querySelector('#sanitary').addEventListener('change', (e) => {
-        if (e.target.checked) {
-            formData.push({
-                "name": "Corte sanitario",
-                "cost": '$10 less than haircut'
-            });
+            nailTrimCutCost.innerHTML = '';
+            nailGrindCost.innerHTML = '';
+            comboCost.innerHTML = ''
+            $('.flat2').prop('disabled', true);
+            $('.flat2').prop('checked', false).iCheck('update');
         }
     });
 
     document.querySelector('form').addEventListener('submit', function (e) {
         let data = {};
+        let formData = [];
+
+        if (document.querySelector('#dental').checked) {
+            formData.push({
+                "name": "Cepillado de dientes",
+                "cost": '8 + tax'
+            });
+        }
+
+        if (document.querySelector('#facial').checked) {
+            formData.push({
+                "name": "Facial",
+                "cost": '8 + tax'
+            });
+        }
+
+        if (document.querySelector('#paintNails').checked) {
+            formData.push({
+                "name": "Pintar uñas",
+                "cost": '10 + tax'
+            });
+        }
+
+
+        if (document.querySelector('#trimArea').checked) {
+            formData.push({
+                "name": "Rasurar 1 zona",
+                "cost": '5 + tax'
+            });
+        }
+
+        if (document.querySelector('#fullHeadTrim').checked) {
+            formData.push({
+                "name": "Recorte de cabeza",
+                "cost": '10 + tax'
+            });
+        }
+
+        if (document.querySelector('#poodleFeet').checked) {
+            formData.push({
+                "name": "Rasurado de pata",
+                "cost": '20 + tax'
+            });
+        }
+
+        if (document.querySelector('#express').checked) {
+            formData.push({
+                "name": "Express",
+                "cost": '35 + tax'
+            });
+        }
+
+        if (document.querySelector('#ticksInfestation').checked) {
+            formData.push({
+                "name": "Infestación de garrapatas",
+                "cost": '1 x minute'
+            });
+        }
+
+        if (document.querySelector('#earsCleaned').checked) {
+            formData.push({
+                "name": "Limpieza de orejas",
+                "cost": '35 + tax'
+            });
+        }
+
+        if (document.querySelector('#sanitary').checked) {
+            formData.push({
+                "name": "Corte sanitario",
+                "cost": '$10 less than haircut'
+            });
+        }
+
+        console.log(formData);
+        const checkoutButton = document.querySelector('#checkoutButton');
         checkoutButton.disabled = true;
 
         data["name"] = document.querySelector('#name').value;

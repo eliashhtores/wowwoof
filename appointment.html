@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
   <link rel="stylesheet" href="css/style.css">
   <script src="https://js.stripe.com/v3/"></script>
+  <link href="css/flat/flat.css" rel="stylesheet">
   <title>Agendar Cita</title>
 </head>
 
@@ -79,39 +80,39 @@
                   <div class="col-3">
                     <select class="form-control form-control-lg" name="weight" id="weight">
                       <option value="">-- Selecciona el peso --</option>
-                      <option value="10 libras o menos">10 libras o menos</option>
-                      <option value="11 a 20 libras">11 a 20 libras</option>
-                      <option value="21 a 30 libras"> 21 a 30 libras</option>
-                      <option value="31 a 40 libras">31 a 40 libras</option>
-                      <option value="41 a 50 libras">41 a 50 libras</option>
-                      <option value="51 a 60 libras">51 a 60 libras</option>
-                      <option value="61 a 70 libras">61 a 70 libras</option>
-                      <option value="71 a 80 libras">71 a 80 libras</option>
-                      <option value="81 a 90 libras">81 a 90 libras</option>
-                      <option value="91 a 100 libras">91 a 100 libras</option>
-                      <option value="101 a 110 libras">101 a 110 libras</option>
-                      <option value="111 a 120 libras">111 a 120 libras</option>
-                      <option value="121 a 130 libras">121 a 130 libras</option>
+                      <option value=0>10 libras o menos</option>
+                      <option value=1>11 a 20 libras</option>
+                      <option value=2> 21 a 30 libras</option>
+                      <option value=3>31 a 40 libras</option>
+                      <option value=4>41 a 50 libras</option>
+                      <option value=5>51 a 60 libras</option>
+                      <option value=6>61 a 70 libras</option>
+                      <option value=7>71 a 80 libras</option>
+                      <option value=8>81 a 90 libras</option>
+                      <option value=9>91 a 100 libras</option>
+                      <option value=10>101 a 110 libras</option>
+                      <option value=11>111 a 120 libras</option>
+                      <option value=12>121 a 130 libras</option>
                     </select>
                   </div>
                   <div class="col-md-3">
-                    <div class="custom-control custom-radio">
-                      <input type="radio" required disabled id="hairCut" name="weightService"
-                        class="custom-control-input">
-                      <label class="custom-control-label" for="hairCut" class="text-white">$45 + tax</label>
+                    <span id="hairCutCost"></span>
+                    <div class="weightService">
+                      <input type="radio" disabled required class="flat" value="hairCut" id="hairCut"
+                        name="weightService[]">
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class="custom-control custom-radio">
-                      <input type="radio" required disabled id="bath" name="weightService" class="custom-control-input">
-                      <label class="custom-control-label" for="bath" class="text-white">$20 + tax</label>
+                    <span id="bathCost"></span>
+                    <div>
+                      <input type="radio" disabled required class="flat" value="bath" id="bath" name="weightService[]">
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class="custom-control custom-radio">
-                      <input type="radio" required disabled id="deShed" name="weightService"
-                        class="custom-control-input">
-                      <label class="custom-control-label" for="deShed" class="text-white">$35 + tax</label>
+                    <span id="deShedCost"></span>
+                    <div>
+                      <input type="radio" disabled required class="flat" value="deShed" id="deShed"
+                        name="weightService[]">
                     </div>
                   </div>
                 </div>
@@ -154,159 +155,151 @@
                     <div class="col-3">
                       <select class="form-control form-control-lg" name="weight2" id="weight2">
                         <option value="">-- Selecciona el peso --</option>
-                        <option value="20 libras o menos">20 libras o menos</option>
-                        <option value="21 a 40 librass">21 a 40 libras</option>
-                        <option value="41 libras más">41 libras más</option>
+                        <option value=0>20 libras o menos</option>
+                        <option value=1>21 a 40 libras</option>
+                        <option value=2>41 libras más</option>
                       </select>
                     </div>
                     <div class="col-md-3">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" required disabled id="nailTrim" name="weight2Service"
-                          class="custom-control-input">
-                        <label class="custom-control-label" for="nailTrim" class="text-white">$8 + tax</label>
+                      <span id="nailTrimCutCost"></span>
+                      <div>
+                        <input type="radio" disabled class="flat2" required value="nailTrim" id="nailTrim"
+                          name="weight2Service[]">
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" required disabled id="nailGrind" name="weight2Service"
-                          class="custom-control-input">
-                        <label class="custom-control-label" for="nailGrind" class="text-white">$8 + tax</label>
+                      <span id="nailGrindCost"></span>
+                      <div>
+                        <input type="radio" disabled class="flat2" required value="nailGrind" id="nailGrind"
+                          name="weight2Service[]">
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" required disabled id="combo" name="weight2Service"
-                          class="custom-control-input">
-                        <label class="custom-control-label" for="combo" class="text-white">$14 + tax</label>
+                      <span id="comboCost"></span>
+                      <div>
+                        <input type="radio" disabled class="flat2" required value="combo" id="combo"
+                          name="weight2Service[]">
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <br>
+              <br>
 
-                <div class="row">
-                  <div class="col-3">
-                    <h3>Cepillado de dientes</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Facial</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Pintar uñas</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Rasurar 1 zona</h3>
+              <div class="row">
+                <div class="col-3">
+                  <h3>Cepillado de dientes</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Facial</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Pintar uñas</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Rasurar 1 zona</h3>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-md-3">
+                  $8 + tax
+                  <div>
+                    <input type="checkbox" name="dental" id="dental">
                   </div>
                 </div>
-                <div class="row text-center">
-                  <div class="col-md-3">
-                    $8 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="dental" id="dental">
-                      <label class="custom-control-label" for="dental"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $6 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="facial" id="facial">
-                      <label class="custom-control-label" for="facial"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $10 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="paintNails" id="paintNails">
-                      <label class="custom-control-label" for="paintNails"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $5 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="trimArea" id="trimArea">
-                      <label class="custom-control-label" for="trimArea"></label>
-                    </div>
+                <div class="col-md-3">
+                  $6 + tax
+                  <div>
+                    <input type="checkbox" name="facial" id="facial">
                   </div>
                 </div>
-
-                <br>
-
-                <div class="row">
-                  <div class="col-3">
-                    <h3>Recorte de cabeza</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Rasurado de pata</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Express (Servicio en 1 hr) saltar la línea</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Infestación de garrapatas</h3>
+                <div class="col-md-3">
+                  $10 + tax
+                  <div>
+                    <input type="checkbox" name="paintNails" id="paintNails">
                   </div>
                 </div>
-                <div class="row text-center">
-                  <div class="col-md-3">
-                    $10 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="fullHeadTrim" id="fullHeadTrim">
-                      <label class="custom-control-label" for="fullHeadTrim"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $20 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="poodleFeet" id="poodleFeet">
-                      <label class="custom-control-label" for="poodleFeet"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $35 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="express" id="express">
-                      <label class="custom-control-label" for="express"></label>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    $1 x minute
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="ticksInfestation" id="ticksInfestation">
-                      <label class="custom-control-label" for="ticksInfestation"></label>
-                    </div>
+                <div class="col-md-3">
+                  $5 + tax
+                  <div>
+                    <input type="checkbox" name="trimArea" id="trimArea">
                   </div>
                 </div>
+              </div>
 
-                <br>
+              <br>
 
-                <div class="row">
-                  <div class="col-3">
-                    <h3>Limpieza de orejas</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>Corte sanitario</h3>
+              <div class="row">
+                <div class="col-3">
+                  <h3>Recorte de cabeza</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Rasurado de pata</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Express (Servicio en 1 hr) saltar la línea</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Infestación de garrapatas</h3>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-md-3">
+                  $10 + tax
+                  <div>
+                    <input type="checkbox" name="fullHeadTrim" id="fullHeadTrim">
                   </div>
                 </div>
-                <div class="row text-center">
-                  <div class="col-md-3">
-                    $7 + tax
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="earsCleaned" id="earsCleaned">
-                      <label class="custom-control-label" for="earsCleaned"></label>
-                    </div>
+                <div class="col-md-3">
+                  $20 + tax
+                  <div>
+                    <input type="checkbox" name="poodleFeet" id="poodleFeet">
                   </div>
-                  <div class="col-md-3">
-                    $10 less than haircut
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="switch" name="sanitary" id="sanitary">
-                      <label class="custom-control-label" for="sanitary"></label>
-                    </div>
+                </div>
+                <div class="col-md-3">
+                  $35 + tax
+                  <div>
+                    <input type="checkbox" name="express" id="express">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  $1 x minute
+                  <div>
+                    <input type="checkbox" name="ticksInfestation" id="ticksInfestation">
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-3">
+                  <h3>Limpieza de orejas</h3>
+                </div>
+                <div class="col-3">
+                  <h3>Corte sanitario</h3>
+                </div>
+              </div>
+              <div class="row text-center">
+                <div class="col-md-3">
+                  $7 + tax
+                  <div>
+                    <input type="checkbox" name="earsCleaned" id="earsCleaned">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  $10 less than haircut
+                  <div>
+                    <input type="checkbox" name="sanitary" id="sanitary">
                   </div>
                 </div>
 
-                <br>
+              </div>
 
-                <button id="checkoutButton" class="btn btn-light btn-block"><strong>AGENDAR</strong></button>
+              <br>
+
+              <button id="checkoutButton" class="btn btn-light btn-block"><strong>AGENDAR</strong></button>
 
             </form>
           </div>
@@ -323,13 +316,13 @@
     </div>
   </footer>
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script src="js/translate.js"></script>
   <script src="js/appointment.js"></script>
+  <script src="js/icheck.js"></script>
 
 </body>
 
