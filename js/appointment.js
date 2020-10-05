@@ -81,6 +81,25 @@ const services =
         }
     ];
 
+const translate = {
+    "hairCut": "Corte de pelo",
+    "bath": "Baño",
+    "deShed": "Deslanado",
+    "nailTrimCut": "Corte de uñas",
+    "nailGrind": "Limado de uñas",
+    "combo": "Combo",
+    "dental": "Cepillado de dientes",
+    "facial": "Facial",
+    "paintNails": "Pintar uñas",
+    "trimArea": "Rasurar 1 zona",
+    "fullHeadTrim": "Recorte de cabeza",
+    "poodleFeet": "Rasurado de pata",
+    "express": "Express",
+    "ticksInfestation": "Infestación de garrapatas",
+    "earsCleaned": "Limpieza de orejas",
+    "sanitary": "Corte sanitario"
+};
+
 const services2 =
     [
         {
@@ -111,7 +130,8 @@ function loadEventListeners() {
         });
     });
 
-    document.querySelector('#weight').addEventListener('change', (e) => {
+    const weight = document.querySelector('#weight');
+    weight.addEventListener('change', (e) => {
         hairCutCost = document.querySelector('#hairCutCost');
         bathCost = document.querySelector('#bathCost');
         deShedCost = document.querySelector('#deShedCost');
@@ -130,7 +150,8 @@ function loadEventListeners() {
         }
     });
 
-    document.querySelector('#weight2').addEventListener('change', (e) => {
+    const weight2 = document.querySelector('#weight2');
+    weight2.addEventListener('change', (e) => {
         nailTrimCutCost = document.querySelector('#nailTrimCutCost');
         nailGrindCost = document.querySelector('#nailGrindCost');
         comboCost = document.querySelector('#comboCost');
@@ -173,7 +194,6 @@ function loadEventListeners() {
                 "cost": '10 + tax'
             });
         }
-
 
         if (document.querySelector('#trimArea').checked) {
             formData.push({
@@ -224,64 +244,109 @@ function loadEventListeners() {
             });
         }
 
-        console.log(formData);
+        if (weight.value >= 0) {
+            const weightService = $('[name="weightService[]"]');
+            if (weightService[0].checked === true) {
+                formData.push({
+                    "name": translate[weightService[0].id],
+                    "description": services[weight.value]['description'],
+                    "cost": services[weight.value][weightService[0].id]
+                });
+            } else if (weightService[1].checked === true) {
+                formData.push({
+                    "name": translate[weightService[1].id],
+                    "description": services[weight.value]['description'],
+                    "cost": services[weight.value][weightService[1].id]
+                });
+            } else if (weightService[2].checked === true) {
+                formData.push({
+                    "name": translate[weightService[2].id],
+                    "description": services[weight.value]['description'],
+                    "cost": services[weight.value][weightService[2].id]
+                });
+            }
+        }
+
+        if (weight2.value >= 0) {
+            const weight2Service = $('[name="weight2Service[]"]');
+            if (weight2Service[0].checked === true) {
+                formData.push({
+                    "name": translate[weight2Service[0].id],
+                    "description": services2[weight2.value]['description'],
+                    "cost": services2[weight2.value][weight2Service[0].id]
+                });
+            } else if (weight2Service[1].checked === true) {
+                formData.push({
+                    "name": translate[weight2Service[1].id],
+                    "description": services2[weight2.value]['description'],
+                    "cost": services2[weight2.value][weight2Service[1].id]
+                });
+            } else if (weight2Service[2].checked === true) {
+                formData.push({
+                    "name": translate[weight2Service[2].id],
+                    "description": services2[weight2.value]['description'],
+                    "cost": services2[weight2.value][weight2Service[2].id]
+                });
+            }
+        }
+
         const checkoutButton = document.querySelector('#checkoutButton');
-        checkoutButton.disabled = true;
 
         data["name"] = document.querySelector('#name').value;
         data["phone"] = document.querySelector('#phone').value;
         data["email"] = document.querySelector('#email').value !== '' ? document.querySelector('#email').value : '';
         data["services"] = formData;
 
-        // if (formData.length > 0) {
-        //     checkoutButton.disabled = true;
-        //     // Create an instance of the Stripe object with the publishable API key
-        //     let host = `http://${window.location.hostname}:3000`;
-        //     let key = 'pk_test_51HOsn3GD6aQ2YRETSrkC22e2VavAtvA56qcFJOMuDvDWpDa2ENUC3JmPL05yxDizCSQl6z1spTJIZP6T5oll56kJ00WQhWFlJx';
+        if (formData.length > 0) {
+            checkoutButton.disabled = true;
 
-        //     if (window.location.hostname !== '127.0.0.1') {
-        //         host = `https://ariah-server.herokuapp.com`;
-        //         key = 'pk_live_51HOsn3GD6aQ2YRETGnCEU127RtuFXbrnv1ZM6lNgsSznNv1chou2uPpG09M0kdDSTXSLHZIvTVbLdSLlWs0pBn3o00HGc0v5GB';
-        //     }
+            //     // Create an instance of the Stripe object with the publishable API key
+            //     let host = `http://${window.location.hostname}:3000`;
+            //     let key = 'pk_test_51HOsn3GD6aQ2YRETSrkC22e2VavAtvA56qcFJOMuDvDWpDa2ENUC3JmPL05yxDizCSQl6z1spTJIZP6T5oll56kJ00WQhWFlJx';
 
-        //     const storage = localStorage;
-        //     let appointment = [];
-        //     console.log(data);
-        //     appointment.push(data);
-        //     storage.setItem("appointment", JSON.stringify(appointment[0]));
+            //     if (window.location.hostname !== '127.0.0.1') {
+            //         host = `https://ariah-server.herokuapp.com`;
+            //         key = 'pk_live_51HOsn3GD6aQ2YRETGnCEU127RtuFXbrnv1ZM6lNgsSznNv1chou2uPpG09M0kdDSTXSLHZIvTVbLdSLlWs0pBn3o00HGc0v5GB';
+            //     }
 
-        //     const stripe = Stripe(key);
-        //     // Create a new Checkout Session
-        //     fetch(`${host}/appointments/create-checkout-session`, {
-        //         method: 'POST',
-        //         body: JSON.stringify({
-        //             data: formData.length,
-        //         }),
-        //         headers: {
-        //             'Content-type': 'application/json; charset=UTF-8'
-        //         }
-        //     })
-        //         .then(function (response) {
-        //             return response.json();
-        //         })
-        //         .then(function (session) {
-        //             return stripe.redirectToCheckout({ sessionId: session.id });
-        //         })
-        //         .then(function (result) {
-        //             // If `redirectToCheckout` fails due to a browser or network
-        //             // error, display the localized error message to the
-        //             // customer using `error.message`.
-        //             if (result.error) {
-        //                 alert(result.error.message);
-        //             }
-        //         })
-        //         .catch(function (error) {
-        //             console.error('Error:', error);
-        //         });
-        // } else {
-        //     alert('Por favor, selecciona la cita que deseas agendar.');
-        //     checkoutButton.disabled = false;
-        // }
+            const storage = localStorage;
+            let appointment = [];
+            console.log(data);
+            appointment.push(data);
+            storage.setItem("appointment", JSON.stringify(appointment[0]));
+
+            //     const stripe = Stripe(key);
+            //     // Create a new Checkout Session
+            //     fetch(`${host}/appointments/create-checkout-session`, {
+            //         method: 'POST',
+            //         body: JSON.stringify({
+            //             data: formData.length,
+            //         }),
+            //         headers: {
+            //             'Content-type': 'application/json; charset=UTF-8'
+            //         }
+            //     })
+            //         .then(function (response) {
+            //             return response.json();
+            //         })
+            //         .then(function (session) {
+            //             return stripe.redirectToCheckout({ sessionId: session.id });
+            //         })
+            //         .then(function (result) {
+            //             // If `redirectToCheckout` fails due to a browser or network
+            //             // error, display the localized error message to the
+            //             // customer using `error.message`.
+            //             if (result.error) {
+            //                 alert(result.error.message);
+            //             }
+            //         })
+            //         .catch(function (error) {
+            //             console.error('Error:', error);
+            //         });
+        } else {
+            alert('Por favor, selecciona la cita que deseas agendar.');
+            checkoutButton.disabled = false;
+        }
 
         e.preventDefault();
     });
