@@ -22,6 +22,11 @@ body {
   font-family: 'Bangers',sans-serif;
 }
 
+.secondary-text {
+  background: #7e007e;
+  font-family: 'Bangers',sans-serif;
+}
+
 .carousel-item {
   height: 450px;
 }
