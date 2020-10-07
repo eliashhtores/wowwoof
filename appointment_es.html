@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://js.stripe.com/v3/"></script>
   <link href="css/flat/flat.css" rel="stylesheet">
-  <title>Schedule an appointment</title>
+  <title>Agendar Cita</title>
 </head>
 
 <body>
@@ -24,15 +24,15 @@
 
     <div class="container mb-2">
       <div class="col text-center">
-        <button class="btn btn-outline-dark" id="changeLanguage">Cambiar a español</button>
+        <button class="btn btn-outline-dark" id="changeLanguage">Switch to english</button>
       </div>
     </div>
     <div class="row row-content">
       <div class="col-12">
         <div class="card brand-text text-center card-form">
           <div class="card-body text-white">
-            <h3>Schedule an appointment!</h3>
-            <p class="lead">Please fill out this form to schedule an appointment</p>
+            <h3>¡Agenda una cita!</h3>
+            <p class="lead">Por favor completa este formulario para agendar una cita</p>
             <form>
               <div class="input-group input-group-lg mb-3">
                 <div class="input-group-prepend">
@@ -40,7 +40,7 @@
                     <i class="fas fa-user"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control form-control-lg" required placeholder="Name" id="name"
+                <input type="text" class="form-control form-control-lg" required placeholder="Nombre" id="name"
                   name="name">
               </div>
 
@@ -50,7 +50,7 @@
                     <i class="fas fa-phone"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control form-control-lg" required placeholder="Phone" id="phone"
+                <input type="text" class="form-control form-control-lg" required placeholder="Teléfono" id="phone"
                   name="phone">
               </div>
 
@@ -60,7 +60,8 @@
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
-                <input type="email" class="form-control form-control-lg" placeholder="Email" id="email" name="email">
+                <input type="email" class="form-control form-control-lg" placeholder="Correo electrónico" id="email"
+                  name="email">
               </div>
 
               <br>
@@ -68,35 +69,35 @@
               <div class="text-center lead">
                 <div class="row">
                   <div class="col-3">
-                    <h3>Weight</h3>
+                    <h3>Peso</h3>
                   </div>
                   <div class="col-3">
-                    <h3>++Hair cut</h3>
+                    <h3>++Corte de pelo</h3>
                   </div>
                   <div class="col-3">
-                    <h3>**Bath</h3>
+                    <h3>**Baño</h3>
                   </div>
                   <div class="col-3">
-                    <h3>^^De-Shedding</h3>
+                    <h3>^^Deslanado</h3>
                   </div>
                 </div>
                 <div class="row text-center">
                   <div class="col-3">
                     <select class="form-control form-control-lg" name="weight" id="weight">
-                      <option value="">-- Select your pet's weight --</option>
-                      <option value=0>10 pounds and under</option>
-                      <option value=1>11 to 20 pounds</option>
-                      <option value=2>21 to 30 pounds</option>
-                      <option value=3>31 to 40 pounds</option>
-                      <option value=4>41 to 50 pounds</option>
-                      <option value=5>51 to 60 pounds</option>
-                      <option value=6>61 to 70 pounds</option>
-                      <option value=7>71 to 80 pounds</option>
-                      <option value=8>81 to 90 pounds</option>
-                      <option value=9>91 to 100 pounds</option>
-                      <option value=10>101 to 110 pounds</option>
-                      <option value=11>111 to 120 pounds</option>
-                      <option value=12>121 to 130 pounds</option>
+                      <option value="">-- Selecciona el peso --</option>
+                      <option value=0>10 libras o menos</option>
+                      <option value=1>11 a 20 libras</option>
+                      <option value=2>21 a 30 libras</option>
+                      <option value=3>31 a 40 libras</option>
+                      <option value=4>41 a 50 libras</option>
+                      <option value=5>51 a 60 libras</option>
+                      <option value=6>61 a 70 libras</option>
+                      <option value=7>71 a 80 libras</option>
+                      <option value=8>81 a 90 libras</option>
+                      <option value=9>91 a 100 libras</option>
+                      <option value=10>101 a 110 libras</option>
+                      <option value=11>111 a 120 libras</option>
+                      <option value=12>121 a 130 libras</option>
                     </select>
                   </div>
                   <div class="col-md-3">
@@ -125,16 +126,16 @@
 
                 <div class="small">
                   <div class="row">
-                    ++ Hair cut (Haircut, bath, nail trim, ears cleaned, anal glands expressed, perfume, bandana or
-                    bows).
+                    ++ Corte de pelo (Corte, baño, corte de uñas, limpieza de orejas, drenado de sacos anales, perfume,
+                    bandana o moños).
                   </div>
                   <div class="row">
-                    ** Bath (Bath, nail trim, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
-                    bows).
+                    ** Baño (Baño, corte de uñas, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                    bandana o monos).
                   </div>
                   <div class="row">
-                    ^^ De-shed (Bath, De Shed, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
-                    bows).
+                    ^^ Deslanado (Baño, deslanado, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                    bandana o monos).
                   </div>
                 </div>
 
@@ -143,13 +144,13 @@
                 <div class="text-center lead">
                   <div class="row">
                     <div class="col-3">
-                      <h3>Weight</h3>
+                      <h3>Peso</h3>
                     </div>
                     <div class="col-3">
-                      <h3>Nail cut</h3>
+                      <h3>Corte de uñas</h3>
                     </div>
                     <div class="col-3">
-                      <h3>Nail trim</h3>
+                      <h3>Limado de uñas</h3>
                     </div>
                     <div class="col-3">
                       <h3>Combo</h3>
@@ -158,10 +159,10 @@
                   <div class="row text-center">
                     <div class="col-3">
                       <select class="form-control form-control-lg" name="weight2" id="weight2">
-                        <option value="">-- Select your pet's weight --</option>
-                        <option value=0>20 pounds and under</option>
-                        <option value=1>21 to 40 pounds</option>
-                        <option value=2>41 pounds and up</option>
+                        <option value="">-- Selecciona el peso --</option>
+                        <option value=0>20 libras o menos</option>
+                        <option value=1>21 a 40 libras</option>
+                        <option value=2>41 libras más</option>
                       </select>
                     </div>
                     <div class="col-md-3">
@@ -191,23 +192,23 @@
 
               <br>
 
-              <button id="checkoutButton" class="btn btn-light btn-block"><strong>SCHEDULE APPOINTMENT</strong></button>
+              <button id="checkoutButton" class="btn btn-light btn-block"><strong>AGENDAR CITA</strong></button>
             </form>
 
             <br>
 
             <div class="row">
               <div class="col-3">
-                <h5>Dental</h5>
+                <h5>Cepillado de dientes</h5>
               </div>
               <div class="col-3">
                 <h5>Facial</h5>
               </div>
               <div class="col-3">
-                <h5>Paint nails</h5>
+                <h5>Pintar uñas</h5>
               </div>
               <div class="col-3">
-                <h5>Trim 1 area</h5>
+                <h5>Rasurar 1 zona</h5>
               </div>
             </div>
             <div class="row text-center">
@@ -229,16 +230,16 @@
 
             <div class="row">
               <div class="col-3">
-                <h5>Full head trim</h5>
+                <h5>Recorte de cabeza</h5>
               </div>
               <div class="col-3">
-                <h5>Poodle feet</h5>
+                <h5>Rasurado de pata</h5>
               </div>
               <div class="col-3">
-                <h5>Express (1 hour service) skip the line</h5>
+                <h5>Express (Servicio en 1 hr) saltar la línea</h5>
               </div>
               <div class="col-3">
-                <h5>Ticks infestation</h5>
+                <h5>Infestación de garrapatas</h5>
               </div>
             </div>
             <div class="row text-center">
@@ -252,7 +253,7 @@
                 $35 + tax
               </div>
               <div class="col-md-3">
-                $1 x minute
+                $1 x minuto
               </div>
             </div>
 
@@ -260,10 +261,10 @@
 
             <div class="row">
               <div class="col-3">
-                <h5>Ears cleaned</h5>
+                <h5>Limpieza de orejas</h5>
               </div>
               <div class="col-3">
-                <h5>Sanitary</h5>
+                <h5>Corte sanitario</h5>
               </div>
             </div>
             <div class="row text-center">
@@ -271,10 +272,10 @@
                 $7 + tax
               </div>
               <div class="col-md-3">
-                $10 less than haircut
+                $10 menos que corte de pelo
               </div>
             </div>
-            <h2>No appointment needed</h2>
+            <h2>No requieren cita</h2>
           </div>
         </div>
       </div>
@@ -287,7 +288,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script src="js/translate.js"></script>
-  <script src="js/appointment.js"></script>
+  <script src="js/appointment_es.js"></script>
   <script src="js/icheck.js"></script>
 
 </body>

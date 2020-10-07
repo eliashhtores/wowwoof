@@ -8,7 +8,7 @@ const storage = localStorage;
 let appointment = JSON.parse(storage.getItem("appointment"));
 
 if (appointment) {
-    createAppointment(appointment);
+    // createAppointment(appointment);
     deleteSession();
 }
 
@@ -24,7 +24,7 @@ function createAppointment(data) {
             console.log(response);
         })
         .catch(function (error) {
-            alert('Ocurrió un error, favor de intentar más tarde');
+            alert('There was an error, please try again later');
             console.error('Error:', error);
         });
 }
