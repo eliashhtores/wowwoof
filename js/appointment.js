@@ -310,7 +310,7 @@ function loadEventListeners() {
 
             if (window.location.hostname !== '127.0.0.1') {
                 host = `https://wowwoofserver.herokuapp.com`;
-                key = 'pk_live_51HOsn3GD6aQ2YRETGnCEU127RtuFXbrnv1ZM6lNgsSznNv1chou2uPpG09M0kdDSTXSLHZIvTVbLdSLlWs0pBn3o00HGc0v5GB';
+                key = 'pk_live_51HZ57DG6AMMuG0DDfmhVil5leURePuhTQGEIHT1IfOpB4zkw1UDwJMHOzkIcbHeWccUDZ6SLIDQllBPiqdyvoG8d0009vtJagm';
             }
 
             const storage = localStorage;
