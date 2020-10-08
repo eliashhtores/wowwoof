@@ -3,7 +3,7 @@ loadEventListeners();
 const picker = document.getElementById('date');
 picker.addEventListener('input', function (e) {
     var day = new Date(this.value).getUTCDay();
-    if ([5, 0].includes(day)) {
+    if ([7, 0].includes(day)) {
         e.preventDefault();
         this.value = '';
         alert('No se permiten citas en domingo');
