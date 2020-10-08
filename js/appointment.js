@@ -299,6 +299,8 @@ function loadEventListeners() {
         data["name"] = document.querySelector('#name').value;
         data["phone"] = document.querySelector('#phone').value;
         data["email"] = document.querySelector('#email').value !== '' ? document.querySelector('#email').value : '';
+        data["date"] = document.querySelector('#date').value;
+        data["time"] = document.querySelector('#time').value;
         data["services"] = formData;
 
         if (formData.length > 0) {

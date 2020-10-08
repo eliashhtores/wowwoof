@@ -300,6 +300,8 @@ function loadEventListeners() {
         data["phone"] = document.querySelector('#phone').value;
         data["email"] = document.querySelector('#email').value !== '' ? document.querySelector('#email').value : '';
         data["services"] = formData;
+        data["date"] = document.querySelector('#date').value;
+        data["time"] = document.querySelector('#time').value;
 
         if (formData.length > 0) {
             checkoutButton.disabled = true;

@@ -8,7 +8,7 @@ const storage = localStorage;
 let appointment = JSON.parse(storage.getItem("appointment"));
 
 if (appointment) {
-    // createAppointment(appointment);
+    createAppointment(appointment);
     deleteSession();
 }
 
