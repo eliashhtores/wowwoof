@@ -1,4 +1,15 @@
 loadEventListeners();
+
+const picker = document.getElementById('date');
+picker.addEventListener('input', function (e) {
+    var day = new Date(this.value).getUTCDay();
+    if ([5, 0].includes(day)) {
+        e.preventDefault();
+        this.value = '';
+        alert('Sundays not allowed');
+    }
+});
+
 const services =
     [
         {
@@ -21,68 +32,68 @@ const services =
         },
         {
             "description": "31 to 40 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$35 + tax",
             "deShed": "$65 + tax"
         },
         {
             "description": "41 to 50 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$40 + tax",
             "deShed": "$75 + tax"
         },
         {
             "description": "51 to 60 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$45 + tax",
             "deShed": "$85 + tax"
         },
         {
             "description": "61 to 70 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$50 + tax",
             "deShed": "$95 + tax"
         },
         {
             "description": "71 to 80 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$55 + tax",
             "deShed": "$105 + tax"
         },
         {
             "description": "81 to 90 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$60 + tax",
             "deShed": "$115 + tax"
         },
         {
             "description": "91 to 100 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$65 + tax",
             "deShed": "$125 + tax"
         },
         {
             "description": "101 to 110 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$70 + tax",
             "deShed": "$135 + tax"
         },
         {
             "description": "111 to 120 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$75 + tax",
             "deShed": "$145 + tax"
         },
         {
             "description": "121 to 130 pounds",
-            "hairCut": "$40 + peso + tax",
+            "hairCut": "$40 + weight + tax",
             "bath": "$80 + tax",
             "deShed": "$155 + tax"
         }
     ];
 
 const translate = {
-    "hairCut": "Hair cut",
+    "hairCut": "Haircut",
     "bath": "Baño",
     "deShed": "Deslanado",
     "nailTrimCut": "Corte de uñas",
