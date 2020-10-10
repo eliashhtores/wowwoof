@@ -126,7 +126,7 @@ const services2 =
             "combo": "$18 + tax"
         },
         {
-            "description": "41 libras más",
+            "description": "41 libras o más",
             "nailTrimCut": "$13 + tax",
             "nailGrind": "$13 + tax",
             "combo": "$23 + tax"

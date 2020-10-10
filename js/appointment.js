@@ -114,19 +114,19 @@ const translate = {
 const services2 =
     [
         {
-            "description": "20 libras o menos",
+            "description": "20 pounds and under",
             "nailTrimCut": "$8 + tax",
             "nailGrind": "$8 + tax",
             "combo": "$14 + tax"
         },
         {
-            "description": "21 a 40 libras",
+            "description": "21 to 40 pounds",
             "nailTrimCut": "$10 + tax",
             "nailGrind": "$10 + tax",
             "combo": "$18 + tax"
         },
         {
-            "description": "41 libras más",
+            "description": "41 pounds and up",
             "nailTrimCut": "$13 + tax",
             "nailGrind": "$13 + tax",
             "combo": "$23 + tax"
