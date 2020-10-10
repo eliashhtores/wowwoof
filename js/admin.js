@@ -52,9 +52,9 @@ window.onload = function () {
                         if (response[i].services[j].date < today) {
                             continue;
                         } else {
-                            type = response[i].services[j].type !== undefined ? `<small>${response[i].services[j].type}</small> <br>` : '';
-                            div.innerHTML += `- ${response[i].services[j].name} -<br>
-                        ${type}`;
+                            div.innerHTML += `- ${response[i].services[j].name} -<br>`;
+                            div.innerHTML += `${response[i].services[j].description}<br>`;
+                            div.innerHTML += `${response[i].services[j].cost}<br>`;
                         }
                     }
 
