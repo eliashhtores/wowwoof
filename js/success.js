@@ -1,7 +1,7 @@
 let host = `http://${window.location.hostname}:3000`;
 
 if (window.location.hostname !== '127.0.0.1') {
-    host = `https://wow-woof.herokuapp.com`;
+    host = `https://wowwoofserver.herokuapp.com`;
 }
 
 const storage = localStorage;
@@ -13,6 +13,7 @@ if (appointment) {
 }
 
 function createAppointment(data) {
+    console.log(`${host}/appointments`);
     fetch(`${host}/appointments`, {
         method: 'POST',
         body: JSON.stringify(data),
