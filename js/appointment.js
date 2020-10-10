@@ -94,21 +94,21 @@ const services =
 
 const translate = {
     "hairCut": "Haircut",
-    "bath": "Baño",
-    "deShed": "Deslanado",
-    "nailTrimCut": "Corte de uñas",
-    "nailGrind": "Limado de uñas",
+    "bath": "Bath",
+    "deShed": "DeShed",
+    "nailTrimCut": "Nail trim",
+    "nailGrind": "Nail grind",
     "combo": "Combo",
-    "dental": "Cepillado de dientes",
+    "dental": "Dental",
     "facial": "Facial",
-    "paintNails": "Pintar uñas",
-    "trimArea": "Rasurar 1 zona",
-    "fullHeadTrim": "Recorte de cabeza",
-    "poodleFeet": "Rasurado de pata",
+    "paintNails": "Paint Nails",
+    "trimArea": "Trim 1 area",
+    "fullHeadTrim": "Full head trim",
+    "poodleFeet": "Poodle feet",
     "express": "Express",
-    "ticksInfestation": "Infestación de garrapatas",
-    "earsCleaned": "Limpieza de orejas",
-    "sanitary": "Corte sanitario"
+    "ticksInfestation": "Ticks infestation",
+    "earsCleaned": "Ears cleaned",
+    "sanitary": "Sanitary"
 };
 
 const services2 =
