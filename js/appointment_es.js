@@ -96,7 +96,7 @@ const translate = {
     "hairCut": "Corte de pelo",
     "bath": "Baño",
     "deShed": "Deslanado",
-    "nailTrimCut": "Corte de uñas",
+    "nailTrim": "Corte de uñas",
     "nailGrind": "Limado de uñas",
     "combo": "Combo",
     "dental": "Cepillado de dientes",
@@ -115,19 +115,19 @@ const services2 =
     [
         {
             "description": "20 libras o menos",
-            "nailTrimCut": "$8 + tax",
+            "nailTrim": "$8 + tax",
             "nailGrind": "$8 + tax",
             "combo": "$14 + tax"
         },
         {
             "description": "21 a 40 libras",
-            "nailTrimCut": "$10 + tax",
+            "nailTrim": "$10 + tax",
             "nailGrind": "$10 + tax",
             "combo": "$18 + tax"
         },
         {
             "description": "41 libras o más",
-            "nailTrimCut": "$13 + tax",
+            "nailTrim": "$13 + tax",
             "nailGrind": "$13 + tax",
             "combo": "$23 + tax"
         }
@@ -167,17 +167,17 @@ function loadEventListeners() {
 
     const weight2 = document.querySelector('#weight2');
     weight2.addEventListener('change', (e) => {
-        nailTrimCutCost = document.querySelector('#nailTrimCutCost');
+        nailTrimCost = document.querySelector('#nailTrimCost');
         nailGrindCost = document.querySelector('#nailGrindCost');
         comboCost = document.querySelector('#comboCost');
         if (e.target.value !== '') {
-            nailTrimCutCost.innerHTML = services2[e.target.value].nailTrimCut;
+            nailTrimCost.innerHTML = services2[e.target.value].nailTrim;
             nailGrindCost.innerHTML = services2[e.target.value].nailGrind;
             comboCost.innerHTML = services2[e.target.value].combo;
             $('.flat2').prop('disabled', false);
             $('.flat2').prop('checked', false).iCheck('update');
         } else {
-            nailTrimCutCost.innerHTML = '';
+            nailTrimCost.innerHTML = '';
             nailGrindCost.innerHTML = '';
             comboCost.innerHTML = ''
             $('.flat2').prop('disabled', true);
