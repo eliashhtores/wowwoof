@@ -65,25 +65,12 @@
 
               <br>
 
-              <div class="text-center lead">
+              <div class="lead">
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-12">
                     <h3>Weight</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>++Haircut</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>**Bath</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>^^De-Shedding</h3>
-                  </div>
-                </div>
-                <div class="row text-center">
-                  <div class="col-3">
-                    <select class="form-control form-control-lg" name="weight" id="weight">
-                      <option value="">-- Select your pet's weight --</option>
+                    <select class="form-control form-control-lg mb-4" name="weight" id="weight">
+                      <option value="">Select your pet's weight</option>
                       <option value=0>10 pounds and under</option>
                       <option value=1>11 to 20 pounds</option>
                       <option value=2>21 to 30 pounds</option>
@@ -99,20 +86,25 @@
                       <option value=12>121 to 130 pounds</option>
                     </select>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-12">
+                    <h3>++Haircut</h3>
                     <span id="hairCutCost"></span>
-                    <div class="weightService">
+                    <div class="weightService mb-4">
                       <input type="radio" disabled required class="flat" value="hairCut" id="hairCut"
                         name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-12 mb-4">
+                    <h3>**Bath</h3>
                     <span id="bathCost"></span>
                     <div>
                       <input type="radio" disabled required class="flat" value="bath" id="bath" name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-12">
+                    <h3>^^De-Shedding</h3>
+                  </div>
+                  <div class="col-12 mb-4">
                     <span id="deShedCost"></span>
                     <div>
                       <input type="radio" disabled required class="flat" value="deShed" id="deShed"
@@ -121,24 +113,20 @@
                   </div>
                 </div>
 
-                <br>
-
                 <div class="small">
-                  <div class="row">
+                  <div class="row mb-3">
                     ++ Hair cut (Haircut, bath, nail trim, ears cleaned, anal glands expressed, perfume, bandana or
                     bows).
                   </div>
-                  <div class="row">
+                  <div class="row mb-3">
                     ** Bath (Bath, nail trim, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
                     bows).
                   </div>
-                  <div class="row">
+                  <div class="row mb-3">
                     ^^ De-shed (Bath, De Shed, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
                     bows).
                   </div>
                 </div>
-
-                <br>
 
                 <div class="text-center lead">
                   <div class="row">
@@ -188,7 +176,7 @@
                   </div>
 
                   <div class="row mt-3">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-4">
                       <select class="form-control form-control-lg" required name="time" data-field="time" id="time">
                         <option value="">-- Select time --</option>
                         <option value="8:00 a.m.">8:00 a.m.</option>
@@ -202,10 +190,8 @@
                         <option value="4:00 p.m.">4:00 p.m.</option>
                       </select>
                     </div>
-                  </div>
-                  <div class="row mt-3">
                     <div class="col-md-3">
-                      <input type="date" name="date" required class="form-control" id="date">
+                      <input type="date" name="date" required class="form-control form-control-lg" id="date">
                     </div>
                   </div>
                 </div>
