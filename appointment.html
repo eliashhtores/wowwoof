@@ -27,6 +27,7 @@
         <button class="btn btn-outline-dark" id="changeLanguage">Cambiar a español</button>
       </div>
     </div>
+
     <div class="row row-content">
       <div class="col-12">
         <div class="card brand-text text-center card-form">
@@ -86,7 +87,10 @@
                       <option value=12>121 to 130 pounds</option>
                     </select>
                   </div>
-                  <div class="col-12">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
                     <h3>++Haircut</h3>
                     <span id="hairCutCost"></span>
                     <div class="weightService mb-4">
@@ -94,17 +98,15 @@
                         name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-12 mb-4">
+                  <div class="col-md-4 col-xs-12">
                     <h3>**Bath</h3>
                     <span id="bathCost"></span>
                     <div>
                       <input type="radio" disabled required class="flat" value="bath" id="bath" name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-12">
+                  <div class="col-md-4 col-xs-12">
                     <h3>^^De-Shedding</h3>
-                  </div>
-                  <div class="col-12 mb-4">
                     <span id="deShedCost"></span>
                     <div>
                       <input type="radio" disabled required class="flat" value="deShed" id="deShed"
@@ -112,91 +114,82 @@
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="small">
-                  <div class="row mb-3">
-                    ++ Hair cut (Haircut, bath, nail trim, ears cleaned, anal glands expressed, perfume, bandana or
-                    bows).
-                  </div>
-                  <div class="row mb-3">
-                    ** Bath (Bath, nail trim, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
-                    bows).
-                  </div>
-                  <div class="row mb-3">
-                    ^^ De-shed (Bath, De Shed, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
-                    bows).
+              <div class="small">
+                <div class="row mb-3">
+                  ++ Hair cut (Haircut, bath, nail trim, ears cleaned, anal glands expressed, perfume, bandana or
+                  bows).
+                </div>
+                <div class="row mb-3">
+                  ** Bath (Bath, nail trim, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
+                  bows).
+                </div>
+                <div class="row mb-3">
+                  ^^ De-shed (Bath, De Shed, ears cleaned, anal glands expressed, dental foam, perfume, bandana or
+                  bows).
+                </div>
+              </div>
+
+              <div class="lead">
+                <div class="row">
+                  <div class="col-12 mb-4 mt-4">
+                    <h3>Weight</h3>
+                    <select class="form-control form-control-lg" name="weight2" id="weight2">
+                      <option value="">-- Select your pet's weight --</option>
+                      <option value=0>20 pounds and under</option>
+                      <option value=1>21 to 40 pounds</option>
+                      <option value=2>41 pounds and up</option>
+                    </select>
                   </div>
                 </div>
-
-                <div class="text-center lead">
-                  <div class="row">
-                    <div class="col-3">
-                      <h3>Weight</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Nail grind</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Nail trim</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Combo</h3>
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Nail grind</h3>
+                    <span id="nailGrindCost"></span>
+                    <div class="weight2Service mb-4">
+                      <input type="radio" disabled required class="flat2" value="nailGrind" id="nailGrind"
+                        name="weight2Service[]">
                     </div>
                   </div>
-                  <div class="row text-center">
-                    <div class="col-3">
-                      <select class="form-control form-control-lg" name="weight2" id="weight2">
-                        <option value="">-- Select your pet's weight --</option>
-                        <option value=0>20 pounds and under</option>
-                        <option value=1>21 to 40 pounds</option>
-                        <option value=2>41 pounds and up</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <span id="nailTrimCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="nailTrim" id="nailTrim"
-                          name="weight2Service[]">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <span id="nailGrindCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="nailGrind" id="nailGrind"
-                          name="weight2Service[]">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <span id="comboCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="combo" id="combo"
-                          name="weight2Service[]">
-                      </div>
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Nail trim</h3>
+                    <span id="nailTrimCost"></span>
+                    <div>
+                      <input type="radio" disabled required class="flat2" value="nailTrim" id="nailTrim"
+                        name="weight2Service[]">
                     </div>
                   </div>
-
-                  <div class="row mt-3">
-                    <div class="col-md-3 mb-4">
-                      <select class="form-control form-control-lg" required name="time" data-field="time" id="time">
-                        <option value="">-- Select time --</option>
-                        <option value="8:00 a.m.">8:00 a.m.</option>
-                        <option value="9:00 a.m.">9:00 a.m.</option>
-                        <option value="10:00 a.m.">10:00 a.m.</option>
-                        <option value="11:00 a.m.">11:00 a.m.</option>
-                        <option value="12:00 p.m.">12:00 p.m.</option>
-                        <option value="1:00 p.m.">1:00 p.m.</option>
-                        <option value="2:00 p.m.">2:00 p.m.</option>
-                        <option value="3:00 p.m.">3:00 p.m.</option>
-                        <option value="4:00 p.m.">4:00 p.m.</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="date" name="date" required class="form-control form-control-lg" id="date">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Combo</h3>
+                    <span id="comboCost"></span>
+                    <div>
+                      <input type="radio" disabled required class="flat2" value="combo" id="combo"
+                        name="weight2Service[]">
                     </div>
                   </div>
                 </div>
               </div>
 
+              <div class="row mt-3">
+                <div class="col-md-3 mb-4">
+                  <select class="form-control form-control-lg" required name="time" data-field="time" id="time">
+                    <option value="">-- Select time --</option>
+                    <option value="8:00 a.m.">8:00 a.m.</option>
+                    <option value="9:00 a.m.">9:00 a.m.</option>
+                    <option value="10:00 a.m.">10:00 a.m.</option>
+                    <option value="11:00 a.m.">11:00 a.m.</option>
+                    <option value="12:00 p.m.">12:00 p.m.</option>
+                    <option value="1:00 p.m.">1:00 p.m.</option>
+                    <option value="2:00 p.m.">2:00 p.m.</option>
+                    <option value="3:00 p.m.">3:00 p.m.</option>
+                    <option value="4:00 p.m.">4:00 p.m.</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <input type="date" name="date" required class="form-control form-control-lg" id="date">
+                </div>
+              </div>
               <br>
 
               <button id="checkoutButton" class="btn btn-light btn-block"><strong>SCHEDULE APPOINTMENT</strong></button>
@@ -286,7 +279,7 @@
           </div>
         </div>
       </div>
-    </div>
+
   </section>
 
 

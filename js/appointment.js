@@ -167,18 +167,18 @@ function loadEventListeners() {
 
     const weight2 = document.querySelector('#weight2');
     weight2.addEventListener('change', (e) => {
-        nailTrimCost = document.querySelector('#nailTrimCost');
         nailGrindCost = document.querySelector('#nailGrindCost');
+        nailTrimCost = document.querySelector('#nailTrimCost');
         comboCost = document.querySelector('#comboCost');
         if (e.target.value !== '') {
-            nailTrimCost.innerHTML = services2[e.target.value].nailTrim;
             nailGrindCost.innerHTML = services2[e.target.value].nailGrind;
+            nailTrimCost.innerHTML = services2[e.target.value].nailTrim;
             comboCost.innerHTML = services2[e.target.value].combo;
             $('.flat2').prop('disabled', false);
             $('.flat2').prop('checked', false).iCheck('update');
         } else {
-            nailTrimCost.innerHTML = '';
             nailGrindCost.innerHTML = '';
+            nailTrimCost.innerHTML = '';
             comboCost.innerHTML = ''
             $('.flat2').prop('disabled', true);
             $('.flat2').prop('checked', false).iCheck('update');
