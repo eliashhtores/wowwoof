@@ -199,76 +199,6 @@ function loadEventListeners() {
         let data = {};
         let formData = [];
 
-        // if (document.querySelector('#dental').checked) {
-        //     formData.push({
-        //         "name": "Cepillado de dientes",
-        //         "cost": '8 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#facial').checked) {
-        //     formData.push({
-        //         "name": "Facial",
-        //         "cost": '8 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#paintNails').checked) {
-        //     formData.push({
-        //         "name": "Pintar uñas",
-        //         "cost": '10 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#trimArea').checked) {
-        //     formData.push({
-        //         "name": "Rasurar 1 zona",
-        //         "cost": '5 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#fullHeadTrim').checked) {
-        //     formData.push({
-        //         "name": "Recorte de cabeza",
-        //         "cost": '10 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#poodleFeet').checked) {
-        //     formData.push({
-        //         "name": "Rasurado de pata",
-        //         "cost": '20 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#express').checked) {
-        //     formData.push({
-        //         "name": "Express",
-        //         "cost": '35 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#ticksInfestation').checked) {
-        //     formData.push({
-        //         "name": "Infestación de garrapatas",
-        //         "cost": '1 x minute'
-        //     });
-        // }
-
-        // if (document.querySelector('#earsCleaned').checked) {
-        //     formData.push({
-        //         "name": "Limpieza de orejas",
-        //         "cost": '35 + tax'
-        //     });
-        // }
-
-        // if (document.querySelector('#sanitary').checked) {
-        //     formData.push({
-        //         "name": "Corte sanitario",
-        //         "cost": '$10 less than haircut'
-        //     });
-        // }
-
         if (weight.value >= 0) {
             const weightService = $('[name="weightService[]"]');
             if (weightService[0].checked === true) {
@@ -327,7 +257,7 @@ function loadEventListeners() {
         if (formData.length > 0) {
             checkoutButton.disabled = true;
 
-            //     // Create an instance of the Stripe object with the publishable API key
+            // Create an instance of the Stripe object with the publishable API key
             let host = `http://${window.location.hostname}:3000`;
             let key = 'pk_test_51HZ57DG6AMMuG0DD0j2YODIDGmTjsac7ix9spCmAbCimUIfyNLIoTHiBebXAhGU2fDQSBInOIrnQsx8Ztf26dYlQ006gTwXpqg';
 
@@ -368,14 +298,10 @@ function loadEventListeners() {
                     console.error('Error:', error);
                 });
         } else {
-            alert('Por favor, selecciona la cita que deseas agendar.');
+            displayModal('Por favor, selecciona la cita que deseas agendar.');
             checkoutButton.disabled = false;
         }
 
         e.preventDefault();
     });
 };
-
-function invalidDate() {
-    alert('La fecha de tu cita no puede ser en días anteriores.');
-}

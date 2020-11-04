@@ -298,7 +298,7 @@ function loadEventListeners() {
                     console.error('Error:', error);
                 });
         } else {
-            alert('Por favor, selecciona la cita que deseas agendar.');
+            displayModal('Please select the appointment you would like to schedule.');
             checkoutButton.disabled = false;
         }
 
