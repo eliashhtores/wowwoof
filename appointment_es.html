@@ -27,6 +27,7 @@
         <button class="btn btn-outline-dark" id="changeLanguage">Switch to english</button>
       </div>
     </div>
+
     <div class="row row-content">
       <div class="col-12">
         <div class="card brand-text text-center card-form">
@@ -66,25 +67,12 @@
 
               <br>
 
-              <div class="text-center lead">
+              <div class="lead">
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-12">
                     <h3>Peso</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>++Corte de pelo</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>**Baño</h3>
-                  </div>
-                  <div class="col-3">
-                    <h3>^^Deslanado</h3>
-                  </div>
-                </div>
-                <div class="row text-center">
-                  <div class="col-3">
-                    <select class="form-control form-control-lg" name="weight" id="weight">
-                      <option value="">-- Selecciona el peso --</option>
+                    <select class="form-control form-control-lg mb-4" name="weight" id="weight">
+                      <option value="">Selecciona el peso de tu mascota</option>
                       <option value=0>10 libras o menos</option>
                       <option value=1>11 a 20 libras</option>
                       <option value=2>21 a 30 libras</option>
@@ -100,91 +88,85 @@
                       <option value=12>121 a 130 libras</option>
                     </select>
                   </div>
-                  <div class="col-md-3">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>++Corte de pelo</h3>
                     <span id="hairCutCost"></span>
-                    <div class="weightService">
+                    <div class="weightService mb-4">
                       <input type="radio" disabled required class="flat" value="hairCut" id="hairCut"
                         name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>**Baño</h3>
                     <span id="bathCost"></span>
-                    <div>
+                    <div class="mb-4">
                       <input type="radio" disabled required class="flat" value="bath" id="bath" name="weightService[]">
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>^^Deslanado</h3>
                     <span id="deShedCost"></span>
-                    <div>
+                    <div class="mb-4">
                       <input type="radio" disabled required class="flat" value="deShed" id="deShed"
                         name="weightService[]">
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <br>
+              <div class="small">
+                <div class="row mb-3">
+                  ++ Corte de pelo (Corte, baño, corte de uñas, limpieza de orejas, drenado de sacos anales, perfume,
+                  bandana o moños).
+                </div>
+                <div class="row mb-3">
+                  ** Baño (Baño, corte de uñas, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                  bandana o monos).
+                </div>
+                <div class="row mb-3">
+                  ^^ Deslanado (Baño, deslanado, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
+                  bandana o monos).
+                </div>
+              </div>
 
-                <div class="small">
-                  <div class="row">
-                    ++ Corte de pelo (Corte, baño, corte de uñas, limpieza de orejas, drenado de sacos anales, perfume,
-                    bandana o moños).
-                  </div>
-                  <div class="row">
-                    ** Baño (Baño, corte de uñas, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
-                    bandana o monos).
-                  </div>
-                  <div class="row">
-                    ^^ Deslanado (Baño, deslanado, limpieza de orejas, drenado de sacos anales, foam bucal, perfume,
-                    bandana o monos).
+              <div class="lead">
+                <div class="row">
+                  <div class="col-12 mb-4 mt-4">
+                    <h3>Peso</h3>
+                    <select class="form-control form-control-lg" name="weight2" id="weight2">
+                      <option value="">Selecciona el peso de tu mascota</option>
+                      <option value=0>20 libras o menos</option>
+                      <option value=1>21 a 40 libras</option>
+                      <option value=2>41 o libras más</option>
+                    </select>
                   </div>
                 </div>
-
-                <br>
-
-                <div class="text-center lead">
-                  <div class="row">
-                    <div class="col-3">
-                      <h3>Peso</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Corte de uñas</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Limado de uñas</h3>
-                    </div>
-                    <div class="col-3">
-                      <h3>Combo</h3>
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Corte de uñas</h3>
+                    <span id="nailGrindCost"></span>
+                    <div class="weight2Service mb-4">
+                      <input type="radio" disabled required class="flat2" value="nailGrind" id="nailGrind"
+                        name="weight2Service[]">
                     </div>
                   </div>
-                  <div class="row text-center">
-                    <div class="col-3">
-                      <select class="form-control form-control-lg" name="weight2" id="weight2">
-                        <option value="">-- Selecciona el peso --</option>
-                        <option value=0>20 libras o menos</option>
-                        <option value=1>21 a 40 libras</option>
-                        <option value=2>41 o libras más</option>
-                      </select>
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Limado de uñas</h3>
+                    <span id="nailTrimCost"></span>
+                    <div class="mb-4">
+                      <input type="radio" disabled required class="flat2" value="nailTrim" id="nailTrim"
+                        name="weight2Service[]">
                     </div>
-                    <div class="col-md-3">
-                      <span id="nailTrimCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="nailTrim" id="nailTrim"
-                          name="weight2Service[]">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <span id="nailGrindCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="nailGrind" id="nailGrind"
-                          name="weight2Service[]">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <span id="comboCost"></span>
-                      <div>
-                        <input type="radio" disabled class="flat2" required value="combo" id="combo"
-                          name="weight2Service[]">
-                      </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12">
+                    <h3>Combo</h3>
+                    <span id="comboCost"></span>
+                    <div class="mb-4">
+                      <input type="radio" disabled required class="flat2" value="combo" id="combo"
+                        name="weight2Service[]">
                     </div>
                   </div>
                 </div>
@@ -192,8 +174,11 @@
 
               <div class="row mt-3">
                 <div class="col-md-3">
+                  <input type="date" name="date" required class="form-control form-control-lg" id="date">
+                </div>
+                <div class="col-md-3 mb-4">
                   <select class="form-control form-control-lg" required name="time" data-field="time" id="time">
-                    <option value="">-- Selecciona hora --</option>
+                    <option value="">Selecciona hora</option>
                     <option value="8:00 a.m.">8:00 a.m.</option>
                     <option value="9:00 a.m.">9:00 a.m.</option>
                     <option value="10:00 a.m.">10:00 a.m.</option>
@@ -206,12 +191,6 @@
                   </select>
                 </div>
               </div>
-              <div class="row mt-3">
-                <div class="col-md-3">
-                  <input type="date" name="date" required class="form-control" id="date">
-                </div>
-              </div>
-
               <br>
 
               <button id="checkoutButton" class="btn btn-light btn-block"><strong>AGENDAR CITA</strong></button>
@@ -220,95 +199,71 @@
             <br>
 
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-6">
                 <h5>Cepillado de dientes</h5>
-              </div>
-              <div class="col-3">
-                <h5>Facial</h5>
-              </div>
-              <div class="col-3">
-                <h5>Pintar uñas</h5>
-              </div>
-              <div class="col-3">
-                <h5>Rasurar 1 zona</h5>
-              </div>
-            </div>
-            <div class="row text-center">
-              <div class="col-md-3">
                 $8 + tax
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Facial</h5>
+                $10 + tax
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h5>Pintar uñas</h5>
                 $6 + tax
               </div>
-              <div class="col-md-3">
-                $10 + tax
-              </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Rasurar 1 zona</h5>
                 $5 + tax
               </div>
-            </div>
-
-            <br>
-
-            <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-6">
                 <h5>Recorte de cabeza</h5>
-              </div>
-              <div class="col-3">
-                <h5>Rasurado de pata</h5>
-              </div>
-              <div class="col-3">
-                <h5>Express (Servicio en 1 hr) saltar la línea</h5>
-              </div>
-              <div class="col-3">
-                <h5>Infestación de garrapatas</h5>
-              </div>
-            </div>
-            <div class="row text-center">
-              <div class="col-md-3">
                 $10 + tax
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Rasurado de pata</h5>
                 $20 + tax
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Express (Servicio en 1 hr) saltar la línea</h5>
                 $35 + tax
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Infestación de garrapatas</h5>
                 $1 x minuto
               </div>
-            </div>
-
-            <br>
-
-            <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-6">
                 <h5>Limpieza de orejas</h5>
-              </div>
-              <div class="col-3">
-                <h5>Corte sanitario</h5>
-              </div>
-            </div>
-            <div class="row text-center">
-              <div class="col-md-3">
                 $7 + tax
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-6">
+                <h5>Corte sanitario</h5>
                 $10 menos que corte de pelo
               </div>
             </div>
-            <h2>No requieren cita</h2>
+
+            <h2 class="mt-4">No requieren cita</h2>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
+  <div class="modal fade" id="messagesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body"><span id="textMessage"></span></div>
+        <div class="modal-footer">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/appointment_es.js"></script>
   <script src="js/icheck.js"></script>
 

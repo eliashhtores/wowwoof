@@ -305,8 +305,3 @@ function loadEventListeners() {
         e.preventDefault();
     });
 };
-
-function displayModal(message) {
-    document.querySelector('#textMessage').innerHTML = message;
-    $('#messagesModal').modal('show');
-}

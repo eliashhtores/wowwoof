@@ -1,12 +1,22 @@
 loadEventListeners();
 
-const picker = document.getElementById('date');
-picker.addEventListener('input', function (e) {
-    var day = new Date(this.value).getUTCDay();
-    if ([7, 0].includes(day)) {
-        e.preventDefault();
+const picker = document.querySelector('#date').addEventListener('input', function (e) {
+    let today = new Date();
+    const currentDay = String(today.getDate()).padStart(2, '0');
+    const day = new Date(this.value).getUTCDay();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const year = today.getFullYear();
+    today = year + '-' + month + '-' + currentDay;
+
+    e.preventDefault();
+    if ([0].includes(day)) {
         this.value = '';
-        alert('No se permiten citas en domingo');
+        message = 'No se permiten citas en domingo.';
+        displayModal(message);
+    } else if (e.target.value < today) {
+        this.value = '';
+        message = 'La fecha de tu cita no puede ser en días anteriores.';
+        displayModal(message);
     }
 });
 
